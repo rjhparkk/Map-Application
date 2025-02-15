@@ -30,8 +30,8 @@ const wineries = [
     },
     {
       NAME: "Jackson-Triggs",
-      LATITUDE: 43.24442289193054, 
-      LONGITUDE: -79.09052861203192,
+      LATITUDE: 43.24473932570742,
+      LONGITUDE: -79.09154948646152,
       CATEGORY: "tours",
       ADDRESS: "2145 Niagara Stone Rd, Niagara-on-the-Lake, ON"
     },
