@@ -169,3 +169,15 @@ function addNewWinery() {
   });
 }
 
+// Function to get directions from user's location to a selected winery
+function getDirections(destination) {
+  directionsService.route({
+      origin: userMarker.position,
+      destination,
+      travelMode: google.maps.TravelMode.DRIVING
+  }, (result, status) => {
+      if (status === "OK") {
+          directionsRenderer.setDirections(result);
+      }
+  });
+}
