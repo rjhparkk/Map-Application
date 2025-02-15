@@ -103,4 +103,9 @@ function addWineryMarker(winery) {
       map: map,
       title: winery.NAME
   });
-}
+
+    // Create an InfoWindow with winery details
+    const infoWindow = new google.maps.InfoWindow({
+      content: `<h3>${winery.NAME}</h3><p>${winery.ADDRESS}</p>
+                <button onclick="getDirections('${winery.ADDRESS}')">Get Directions</button>`
+  });
