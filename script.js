@@ -117,3 +117,14 @@ function addWineryMarker(winery) {
     marker.CATEGORY = winery.CATEGORY;
     markers.push(marker);
 }
+
+// Function to filter wineries by category
+function filterWineries(category) {
+  markers.forEach(marker => {
+      if (category === "all" || marker.CATEGORY === category) {
+          marker.setMap(map);
+      } else {
+          marker.setMap(null);
+      }
+  });
+}
