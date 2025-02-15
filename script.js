@@ -134,3 +134,16 @@ document.getElementById("all").addEventListener("click", () => filterWineries("a
 document.getElementById("organic").addEventListener("click", () => filterWineries("organic"));
 document.getElementById("tours").addEventListener("click", () => filterWineries("tours"));
 document.getElementById("restaurant").addEventListener("click", () => filterWineries("restaurant"));
+
+// Function to get user's location
+document.getElementById("geolocate").addEventListener("click", () => {
+  navigator.geolocation.getCurrentPosition(position => {
+      if (userMarker) userMarker.setMap(null);
+      userMarker = new google.maps.Marker({
+          position: { lat: position.coords.latitude, lng: position.coords.longitude },
+          map: map,
+          title: "Your Location"
+      });
+      map.setCenter(userMarker.position);
+  });
+});
