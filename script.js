@@ -1,3 +1,4 @@
+// Variables for Google Maps
 let map;
 let markers = [];
 let userMarker;
@@ -24,7 +25,7 @@ const wineries = [
       NAME: "Reif Estate Winery",
       LATITUDE: 43.2374,
       LONGITUDE: -79.0833,
-      CATEGORY: "organic wine",
+      CATEGORY: "organic winery",
       ADDRESS: "15608 Niagara Pkwy, Niagara-on-the-Lake, ON"
     },
     {
@@ -45,7 +46,7 @@ const wineries = [
       NAME: "Stratus Vineyards",
       LATITUDE: 43.2512,
       LONGITUDE: -79.0812,
-      CATEGORY: "organic wine",
+      CATEGORY: "organic winery",
       ADDRESS: "2059 Niagara Stone Rd, Niagara-on-the-Lake, ON"
     },
     {
@@ -66,7 +67,7 @@ const wineries = [
       NAME: "Ravine Vineyard Estate Winery",
       LATITUDE: 43.2401,
       LONGITUDE: -79.0893,
-      CATEGORY: "organic wine",
+      CATEGORY: "organic winery",
       ADDRESS: "1366 York Rd, St. Davids, ON"
     },
     {
@@ -78,11 +79,12 @@ const wineries = [
     }
 ];
 
-// default location
+// Initialize the Google Map
 function initMap() {
   directionsService = new google.maps.DirectionsService();
   directionsRenderer = new google.maps.DirectionsRenderer();
   
+  // Create a new Google Map centered on Niagara
   map = new google.maps.Map(document.getElementById("map"), {
       center: { lat: 43.2486, lng: -79.0814 },
       zoom: 13
@@ -90,6 +92,15 @@ function initMap() {
 
   directionsRenderer.setMap(map);
 
-  // add markers
+  // Add markers for predefined wineries
   wineries.forEach(addWineryMarker);
+}
+
+// Function to add a winery marker on the map
+function addWineryMarker(winery) {
+  const marker = new google.maps.Marker({
+      position: { lat: winery.LATITUDE, lng: winery.LONGITUDE },
+      map: map,
+      title: winery.NAME
+  });
 }
