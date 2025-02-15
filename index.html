@@ -25,6 +25,21 @@
         <button id="restaurant" class="btn btn-warning">With Restaurant</button>
     </div>
 
+          <!-- Form to add a new winery -->
+          <div class="card mb-3">
+            <div class="card-body">
+                <h5 class="card-title">Add New Winery</h5>
+                <input type="text" id="newName" class="form-control mb-2" placeholder="Winery Name">
+                <input type="text" id="newAddress" class="form-control mb-2" placeholder="Winery Address">
+                <select id="newCategory" class="form-select mb-2">
+                    <option value="organic">Organic Winery</option>
+                    <option value="tours">Winery with Tours</option>
+                    <option value="restaurant">Winery with Restaurant</option>
+                </select>
+                <button onclick="addNewWinery()" class="btn btn-primary">Add Winery</button>
+            </div>
+        </div>
+
     
 </body>
 </html>
