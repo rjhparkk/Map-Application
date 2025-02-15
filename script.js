@@ -1,13 +1,11 @@
-// Map initialization 
-function initMap() {
-    map = new google.maps.Map(document.getElementById("map"), {
-      center: { lat: 43.2486, lng: -79.0814 },
-      zoom: 13
-    });
-  }
-  
-  // Wineries data from the JSON file
-  const wineries = [
+let map;
+let markers = [];
+let userMarker;
+let directionsService;
+let directionsRenderer;
+
+// Wineries data
+const wineries = [
     {
       NAME: "Peller Estates Winery",
       LATITUDE: 43.2485,
@@ -26,7 +24,7 @@ function initMap() {
       NAME: "Reif Estate Winery",
       LATITUDE: 43.2374,
       LONGITUDE: -79.0833,
-      CATEGORY: "organic",
+      CATEGORY: "organic wine",
       ADDRESS: "15608 Niagara Pkwy, Niagara-on-the-Lake, ON"
     },
     {
@@ -47,7 +45,7 @@ function initMap() {
       NAME: "Stratus Vineyards",
       LATITUDE: 43.2512,
       LONGITUDE: -79.0812,
-      CATEGORY: "organic",
+      CATEGORY: "organic wine",
       ADDRESS: "2059 Niagara Stone Rd, Niagara-on-the-Lake, ON"
     },
     {
@@ -68,7 +66,7 @@ function initMap() {
       NAME: "Ravine Vineyard Estate Winery",
       LATITUDE: 43.2401,
       LONGITUDE: -79.0893,
-      CATEGORY: "organic",
+      CATEGORY: "organic wine",
       ADDRESS: "1366 York Rd, St. Davids, ON"
     },
     {
@@ -78,4 +76,4 @@ function initMap() {
       CATEGORY: "restaurant",
       ADDRESS: "240 John St E, Niagara-on-the-Lake, ON"
     }
-  ];
+];

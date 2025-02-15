@@ -1,20 +1,18 @@
 #map {
-    height: 700px;
-    width: 100%;
-    margin-bottom: 20px;
-  }
-  
+  height: 500px;
+  width: 100%;
+  margin-bottom: 20px;
+}
 
-  @media (max-width: 576px) {
-    #map {
+@media (max-width: 576px) {
+  #map {
       height: 400px;
-    }
-    .button-container {
+  }
+  .button-container {
       flex-direction: column;
-    }
-    .button-container button {
+  }
+  .button-container button {
       width: 100%;
       margin: 5px 0;
-    }
   }
-  
+}
