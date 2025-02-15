@@ -9,71 +9,71 @@ let directionsRenderer;
 const wineries = [
     {
       NAME: "Peller Estates Winery",
-      LATITUDE: 43.2485,
-      LONGITUDE: -79.0717,
+      LATITUDE: 43.23874063978602,
+      LONGITUDE: -79.06687531461021,
       CATEGORY: "restaurant",
       ADDRESS: "290 John St E, Niagara-on-the-Lake, ON"
     },
     {
       NAME: "Wayne Gretzky Estates",
-      LATITUDE: 43.2491,
-      LONGITUDE: -79.0731,
+      LATITUDE: 43.211311864262456,
+      LONGITUDE: -79.13492531645917,
       CATEGORY: "tours",
       ADDRESS: "1219 Niagara Stone Rd, Niagara-on-the-Lake, ON"
     },
     {
       NAME: "Reif Estate Winery",
-      LATITUDE: 43.2374,
-      LONGITUDE: -79.0833,
-      CATEGORY: "organic winery",
+      LATITUDE: 43.21746587118719,
+      LONGITUDE: -79.06103838762355,
+      CATEGORY: "organic",
       ADDRESS: "15608 Niagara Pkwy, Niagara-on-the-Lake, ON"
     },
     {
       NAME: "Jackson-Triggs",
-      LATITUDE: 43.2447,
-      LONGITUDE: -79.0828,
+      LATITUDE: 43.24442289193054, 
+      LONGITUDE: -79.09052861203192,
       CATEGORY: "tours",
       ADDRESS: "2145 Niagara Stone Rd, Niagara-on-the-Lake, ON"
     },
     {
       NAME: "Inniskillin Wines",
-      LATITUDE: 43.2283,
-      LONGITUDE: -79.0833,
+      LATITUDE: 43.21076314193828,
+      LONGITUDE: -79.06394717412998,
       CATEGORY: "restaurant",
       ADDRESS: "1499 Line 3, Niagara-on-the-Lake, ON"
     },
     {
       NAME: "Stratus Vineyards",
-      LATITUDE: 43.2512,
-      LONGITUDE: -79.0812,
-      CATEGORY: "organic winery",
+      LATITUDE: 43.24120044958089, 
+      LONGITUDE: -79.09684754898906,
+      CATEGORY: "organic",
       ADDRESS: "2059 Niagara Stone Rd, Niagara-on-the-Lake, ON"
     },
     {
       NAME: "Konzelmann Estate Winery",
-      LATITUDE: 43.2347,
-      LONGITUDE: -79.0922,
+      LATITUDE: 43.25031773286327, 
+      LONGITUDE: -79.14138344529304,
       CATEGORY: "tours",
       ADDRESS: "1096 Lakeshore Rd, Niagara-on-the-Lake, ON"
     },
     {
       NAME: "Trius Winery",
-      LATITUDE: 43.2485,
-      LONGITUDE: -79.0821,
+      LATITUDE: 43.21270591658051, 
+      LONGITUDE: -79.13353908947155,
       CATEGORY: "restaurant",
       ADDRESS: "1249 Niagara Stone Rd, Niagara-on-the-Lake, ON"
     },
     {
       NAME: "Ravine Vineyard Estate Winery",
-      LATITUDE: 43.2401,
-      LONGITUDE: -79.0893,
-      CATEGORY: "organic winery",
+      LATITUDE: 43.16055824399249, 
+      LONGITUDE: -79.10250429983053,
+      CATEGORY: "organic",
       ADDRESS: "1366 York Rd, St. Davids, ON"
     },
     {
       NAME: "Two Sisters Vineyards",
-      LATITUDE: 43.2429,
-      LONGITUDE: -79.0756,
+      LATITUDE: 43.24061038498363,
+      LONGITUDE: -79.06913204898905,
       CATEGORY: "restaurant",
       ADDRESS: "240 John St E, Niagara-on-the-Lake, ON"
     }
