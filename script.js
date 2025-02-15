@@ -147,3 +147,25 @@ document.getElementById("geolocate").addEventListener("click", () => {
       map.setCenter(userMarker.position);
   });
 });
+
+// Function to add a new winery marker from user input
+function addNewWinery() {
+  const name = document.getElementById("newName").value;
+  const address = document.getElementById("newAddress").value;
+  const category = document.getElementById("newCategory").value;
+
+  if (!name || !address) {
+      alert("Please fill in all fields");
+      return;
+  }
+
+  const geocoder = new google.maps.Geocoder();
+  geocoder.geocode({ address: address }, function(results, status) {
+      if (status === "OK") {
+          addWineryMarker({ NAME: name, LATITUDE: results[0].geometry.location.lat(), LONGITUDE: results[0].geometry.location.lng(), CATEGORY: category, ADDRESS: address });
+      } else {
+          alert("Geocoding failed: " + status);
+      }
+  });
+}
+
