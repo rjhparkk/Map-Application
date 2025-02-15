@@ -135,16 +135,30 @@ document.getElementById("organic").addEventListener("click", () => filterWinerie
 document.getElementById("tours").addEventListener("click", () => filterWineries("tours"));
 document.getElementById("restaurant").addEventListener("click", () => filterWineries("restaurant"));
 
-// Function to get user's location
+// Function to get user's location and display it on the map
 document.getElementById("geolocate").addEventListener("click", () => {
+  // Get user's current location using the Geolocation API
   navigator.geolocation.getCurrentPosition(position => {
+      // Remove previous user marker if it exists
       if (userMarker) userMarker.setMap(null);
+
+      // Create a new marker for user's location with a custom icon
       userMarker = new google.maps.Marker({
           position: { lat: position.coords.latitude, lng: position.coords.longitude },
           map: map,
-          title: "Your Location"
+          title: "Your Location",
+          icon: "http://maps.google.com/mapfiles/kml/paddle/blu-circle.png"  // ✅ Custom icon for user location
       });
-      map.setCenter(userMarker.position);
+
+      // Center the map on user's location
+      map.setCenter(userMarker.getPosition());
+
+      // Update location text
+      document.getElementById("whereami").innerHTML = `Latitude: ${position.coords.latitude}, Longitude: ${position.coords.longitude}`;
+  }, error => {
+      // Handle errors in geolocation
+      console.error("Geolocation error:", error);
+      alert("Unable to retrieve your location.");
   });
 });
 
