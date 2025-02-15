@@ -104,6 +104,9 @@ function addWineryMarker(winery) {
       title: winery.NAME
   });
 
+   // Store category information in the marker
+   marker.CATEGORY = winery.CATEGORY; // To Ensure CATEGORY is stored properly
+
     // Create an InfoWindow with winery details
     const infoWindow = new google.maps.InfoWindow({
       content: `<h3>${winery.NAME}</h3><p>${winery.ADDRESS}</p>
@@ -112,19 +115,19 @@ function addWineryMarker(winery) {
 
       // Show InfoWindow when marker is clicked
       marker.addListener("click", () => infoWindow.open(map, marker));
-
-      // Store category for filtering
-    marker.CATEGORY = winery.CATEGORY;
-    markers.push(marker);
+      
+      markers.push(marker);
 }
 
 // Function to filter wineries by category
 function filterWineries(category) {
+  console.log(`Filtering: ${category}`);
+
   markers.forEach(marker => {
       if (category === "all" || marker.CATEGORY === category) {
-          marker.setMap(map);
+          marker.setMap(map); // Show marker
       } else {
-          marker.setMap(null);
+          marker.setMap(null); // Hide marker
       }
   });
 }
