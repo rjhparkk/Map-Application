@@ -128,3 +128,9 @@ function filterWineries(category) {
       }
   });
 }
+
+// Add event listeners to filter buttons
+document.getElementById("all").addEventListener("click", () => filterWineries("all"));
+document.getElementById("organic").addEventListener("click", () => filterWineries("organic"));
+document.getElementById("tours").addEventListener("click", () => filterWineries("tours"));
+document.getElementById("restaurant").addEventListener("click", () => filterWineries("restaurant"));
