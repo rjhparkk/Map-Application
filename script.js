@@ -109,3 +109,6 @@ function addWineryMarker(winery) {
       content: `<h3>${winery.NAME}</h3><p>${winery.ADDRESS}</p>
                 <button onclick="getDirections('${winery.ADDRESS}')">Get Directions</button>`
   });
+
+      // Show InfoWindow when marker is clicked
+      marker.addListener("click", () => infoWindow.open(map, marker));
