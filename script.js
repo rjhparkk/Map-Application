@@ -77,3 +77,19 @@ const wineries = [
       ADDRESS: "240 John St E, Niagara-on-the-Lake, ON"
     }
 ];
+
+// default location
+function initMap() {
+  directionsService = new google.maps.DirectionsService();
+  directionsRenderer = new google.maps.DirectionsRenderer();
+  
+  map = new google.maps.Map(document.getElementById("map"), {
+      center: { lat: 43.2486, lng: -79.0814 },
+      zoom: 13
+  });
+
+  directionsRenderer.setMap(map);
+
+  // add markers
+  wineries.forEach(addWineryMarker);
+}
