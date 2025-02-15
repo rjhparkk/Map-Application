@@ -112,3 +112,8 @@ function addWineryMarker(winery) {
 
       // Show InfoWindow when marker is clicked
       marker.addListener("click", () => infoWindow.open(map, marker));
+
+      // Store category for filtering
+    marker.CATEGORY = winery.CATEGORY;
+    markers.push(marker);
+}
