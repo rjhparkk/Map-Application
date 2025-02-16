@@ -1,9 +1,11 @@
+/* Styling for the map container */
 #map {
   height: 500px;
   width: 100%;
   margin-bottom: 20px;
 }
 
+/* Responsive design for mobile screens */
 @media (max-width: 576px) {
   #map {
       height: 400px;
