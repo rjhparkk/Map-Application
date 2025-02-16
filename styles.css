@@ -1,13 +1,16 @@
-/* Base styling and reset */
+/* Import Roboto font */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
 body {
   font-family: 'Roboto', sans-serif;
-  background-color: #f7f9fc;
+  background-color: #f4f6f9;
   color: #333;
   margin: 0;
   padding: 0;
+  line-height: 1.6;
 }
 
-/* Container for page content */
+/* Main container */
 .container {
   max-width: 1200px;
   margin: 0 auto;
@@ -16,54 +19,20 @@ body {
 
 /* Header styling */
 h1 {
+  text-align: center;
   font-size: 2.5rem;
   font-weight: 700;
-  text-align: center;
-  margin-bottom: 2rem;
-  color: #2a2a2a;
+  margin-bottom: 1.5rem;
+  color: #222;
 }
 
-/* Map container styling */
-#map {
-  height: 500px;
-  width: 100%;
-  border: 2px solid #ddd;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  margin-bottom: 2rem;
-}
-
-/* Button container styling */
-.button-container {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  margin-bottom: 2rem;
-}
-
-/* Filter button styling */
-.button-container button {
-  padding: 0.75rem 1.5rem;
-  font-size: 1rem;
-  border-radius: 5px;
-  border: none;
-  transition: background-color 0.3s ease, transform 0.2s;
-  cursor: pointer;
-}
-
-/* Button hover effects */
-.button-container button:hover {
-  opacity: 0.9;
-  transform: translateY(-2px);
-}
-
-/* Card styling for the form */
+/* Explanation (About This Website) card styling */
 .card {
+  background-color: #fff;
   border: none;
   border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   margin-bottom: 2rem;
-  background-color: #fff;
 }
 
 .card-body {
@@ -73,7 +42,55 @@ h1 {
 .card-title {
   font-size: 1.75rem;
   margin-bottom: 1rem;
-  color: #2a2a2a;
+  color: #222;
+}
+
+/* Map container styling */
+#map {
+  height: 500px;
+  width: 100%;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+  transition: all 0.3s ease;
+}
+
+/* Filter buttons container */
+.button-container {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+/* Filter button styling */
+.button-container button {
+  background-color: #007bff;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  color: #fff;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.button-container button.btn-success {
+  background-color: #28a745;
+}
+
+.button-container button.btn-info {
+  background-color: #17a2b8;
+}
+
+.button-container button.btn-warning {
+  background-color: #ffc107;
+}
+
+.button-container button:hover {
+  transform: translateY(-2px);
+  opacity: 0.95;
 }
 
 /* Form input styling */
@@ -83,6 +100,13 @@ h1 {
   border: 1px solid #ccc;
   padding: 0.75rem;
   font-size: 1rem;
+  transition: border-color 0.3s;
+}
+
+.form-control:focus,
+.form-select:focus {
+  border-color: #007bff;
+  outline: none;
 }
 
 /* Geolocation text styling */
@@ -91,20 +115,20 @@ h1 {
   color: #555;
 }
 
-/* Responsive styling for mobile devices */
+/* Responsive design adjustments */
 @media (max-width: 576px) {
   #map {
-      height: 400px;
+    height: 400px;
   }
   .button-container {
-      flex-direction: column;
-      align-items: stretch;
+    flex-direction: column;
+    align-items: stretch;
   }
   .button-container button {
-      width: 100%;
-      margin: 0.5rem 0;
+    width: 100%;
+    margin: 0.5rem 0;
   }
   h1 {
-      font-size: 2rem;
+    font-size: 2rem;
   }
 }
